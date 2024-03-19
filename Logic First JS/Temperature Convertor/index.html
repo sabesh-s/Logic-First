@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature Convertor</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>°C to °F</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Temperature in °C">
+        </div>
+        <div>
+            <button type="submit" onclick="convert()">Convert to Farenheit</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+      function convert(){
+        const cVal = Number(document.getElementById("input").value)
+        const fVal = (cVal*9/5)+32
+        const result = document.getElementById("result")
+        result.innerHTML = fVal.toFixed(3) + " °F"
+        result.style.opacity=1;
+      }
+    </script>
+</body>
+</html>

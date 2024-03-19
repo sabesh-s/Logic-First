@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Temperature Convertor/style.css">
+    <title>Word Calculator</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Type a sentance</h2>
+        <div class="inputdiv">
+            <textarea name="txt" id="input" cols="50" rows="20"></textarea>
+        </div>
+        <div>
+            <button type="submit" onclick="calculatewords()">Calculate Words</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        function calculatewords(){
+            const sentance=document.getElementById("input").value;
+            console.log(sentance)
+            const wordcount=sentance.split(' ').length;
+            console.log(wordcount)
+            const results=document.getElementById("result");
+            results.innerHTML=`Word Count: ${wordcount}`;
+            result.style.opacity=1;
+            console.log(results)
+        }
+    </script>
+</body>
+</html>

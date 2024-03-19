@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: grey;
+            }
+        #count{
+            justify-items: center;
+            justify-content: center;
+            justify-self: center;
+            border-color: black;
+            margin: 10px 10px;
+            border-radius: 10px;
+            padding: 2px 3px;
+            border-color: brown;
+            background-color: yellow;
+        }
+        #input{
+            align-items: center;
+            border-color: black;
+            justify-content: center;
+        }
+        #result{
+            align-items: center;
+            border-color: black;
+            justify-content: center;
+            margin: 5px 5px 5px 5px;
+        }
+        button{
+            align-items: center;
+            color: white;
+            background-color: black;
+            font-weight: 1000;
+        }
+        h3{
+            text-align: center;
+            justify-content: center;
+            justify-items: center;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id = "count">
+        <h3> EB Bill amount calculator</h3>
+        <div>
+            <input type="text"  id="input" placeholder="Enter the No. of units" >
+        </div>
+        
+        <div>
+            <button type ="submit" onclick="EBcal()">Check</button>
+        </div>
+        <div id="result">
+        </div>
+    </div>
+
+    <script>
+        function EBcal(){
+        let unit = Number(document.getElementById("input").value)
+        if (unit <= 50)
+            rate = unit*0.75
+        else if (unit>=50 && unit<=100)
+            rate = (unit-50)*1 + (50*0.75)
+        else if (unit>=100 && unit<=250)
+            rate = (unit-100)*1.30 + (50*0.75)+(50*1)
+        else if (unit> 250)
+            rate = (unit-250)*1.50 + (195)+ (37.5)+(50)
+        else
+            rate = 0
+        let results = document.getElementById("result")
+        result.innerHTML = "Your charges for the " + unit + " unit is Rs." + rate
+        }
+    </script>
+</body>
+</html>
